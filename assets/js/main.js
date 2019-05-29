@@ -1,3 +1,19 @@
+
+let input=document.getElementById("input");
+
+let grids=document.querySelectorAll(".grid");
+for(let i=0;i<grids.length;i++){
+        grids[i].addEventListener("click",screenize)
+      
+        
+    }
+function screenize(){
+let inputvalue=this.innerText;
+input.innerHTML=inputvalue;
+    
+ 
+}
+
 /////////////ADD  //////////////
 function add(a,b){
     return a+b;
@@ -20,3 +36,5 @@ function divide(a,b){
 function operation(func,num1,num2){
  return  func(num1,num2)  ;
 }
+
+

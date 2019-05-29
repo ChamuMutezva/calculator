@@ -6,29 +6,37 @@ body{
     justify-content:center;  
 }
 input{
+    margin-top:5em;
     width:14em;
     height:4em;
+    color:white;
+    background-color: black;
+    border:none;
+    font-size:1.5em;
   
     
 }
 .container{
     width:100%;
-    height:30vh;
-    font-size:1em;
+    height:40vh;
+    font-size:1.5em;
     color:white;
     text-align:center;
     justify-content:center;
     display:grid;
     grid-template-columns:repeat(4,3em);
+    margin:auto;
 }
 .grid-17{
     grid-column-start: 1;
   grid-column-end: 3;
 }
 .grid{
-    
+    text-align:center;
     border:1px solid #0c0c0c;
     border-radius: 50%;
     background:gray;
+    padding:0.2em;
+   
 }
 
