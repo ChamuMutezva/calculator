@@ -15,27 +15,32 @@ let functions=document.querySelectorAll(".func");
 for(let i=0;i<functions.length;i++){
     functions[i].addEventListener("click",operate)
 }
-/////////////ADD  //////////////
+//=======ADD======//
+
 function add(a,b){
     return a+b;
 }
-/////////SUBSTRACT   /////////
+ //=======SUBSTRACT====//
+
 function substract(a,b){
     return a-b;
 } 
-//////////MULTİPLY   /////////////
+ //====== MULTİPLY =====//
+
 function multiply(a,b){
     return a*b;
     
 }
-//////////DİVİDE   /////////////
+    //====DİVİDE ======//
+
 function divide(a,b){
     return a/b;
     
 }
-//////////MAİN OPERATİON   ///////////
+//=====MAİN OPERATİON=====//
+
 function operate(operator,num1,num2){
-if(Number(this.innerText)&&!this.classList.contains("grid-17")){
+if(Number(this.innerText)){
     if(input.value== 0){
         
         input.value="";
