@@ -32,8 +32,6 @@ function divide(a,b){
     
 }
 //////////MAİN OPERATİON   ///////////
-
-
 function operate(operator,num1,num2){
 if(Number(this.innerText)){
 input.value+=this.innerText;
@@ -49,18 +47,16 @@ input.value+=this.innerText;
                  waitforsec=false;
             }
     if(this.innerText==="+"){
-        while(arr.length>=2){
-       total= add(arr[arr.length-2],arr[arr.length-1])
-       console.log(total)
-            
-        }
+       if(arr.length>2){
+          console.log(add(arr[arr.length-2],arr[arr.length-1])) 
+       }
     
 }        
 
 }
 
 
-console.log(total)
+
 
 }
 
