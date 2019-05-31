@@ -1,10 +1,12 @@
 
 let input=document.getElementById("input");
 let arr=[];
-let waitforsec=true;
+let opsarr=[];
+let waitforsec=false;
 let total=0;
 
-
+let equal=document.querySelector(".equal");
+equal.addEventListener("click",equals)
 let grids=document.querySelectorAll(".grid");
 for(let i=0;i<grids.length;i++){
         grids[i].addEventListener("click",operate)
@@ -33,32 +35,63 @@ function divide(a,b){
 }
 //////////MAİN OPERATİON   ///////////
 function operate(operator,num1,num2){
-if(Number(this.innerText)){
-input.value+=this.innerText;
-}else if(!Number(this.innerText)){
-            if(waitforsec){
+if(Number(this.innerText)&&!this.classList.contains("grid-17")){
+    if(input.value== 0){
+        
+        input.value="";
+        input.value+=Number(this.innerText);
+    }else {
+        input.value+=Number(this.innerText);
+    }
+    
+}else if(!Number(this.innerText)&&!this.classList.contains("current-op")){
+            if(!waitforsec){
                 let num1=Number(input.value);
                  arr.push(num1);
                 input.value="";
                  waitforsec=true;
+                 console.log(num1)
             }else{
                  let num2=Number(input.value);
                  arr.push(num2);
+                 input.value="";
                  waitforsec=false;
+                 console.log(num2)
             }
-    if(this.innerText==="+"){
-       if(arr.length>2){
-          console.log(add(arr[arr.length-2],arr[arr.length-1])) 
-       }
+this.classList.add("current-op")        
+opsarr.push(this.innerText)
+}
+}
+
+function equals(){
+
+    if(opsarr[opsarr.length-1]=="+"){
+        total=add(arr[arr.length-1],Number(input.value));
+        input.value=total;
+        
+    }else if(opsarr[opsarr.length-1]=="-"){
+            total=substract(arr[arr.length-1],Number(input.value));
+            input.value=total;
+        }else if(opsarr[opsarr.length-1]=="*"){
+            total=multiply(arr[arr.length-1],Number(input.value));
+            input.value=total;
+        }else if(opsarr[opsarr.length-1]=="/"){
+            if(!Number(input.value)==0){
+                total=divide(arr[arr.length-1],Number(input.value));
+                input.value=total;
+            }else{
+                window.alert("ERROR!")
+            }
+            
+        }
+
+        let ops=document.querySelectorAll(".current-op");
+        for(let i=0;i<ops.length;i++){
+            ops[i].classList.remove("current-op")
+
+    }
     
-}        
 
 }
-
-
-
-
-}
-
 
 
