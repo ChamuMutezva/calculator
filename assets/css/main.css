@@ -7,7 +7,7 @@ body{
 }
 input{
     margin-top:5em;
-    width:14em;
+    width:11em;
     height:4em;
     color:white;
     background-color: black;
@@ -31,12 +31,18 @@ input{
     grid-column-start: 1;
   grid-column-end: 3;
 }
+.func,.logo{
+    background:#ff8a42;
+    text-align:center;
+    border:1px solid #0c0c0c;
+    border-radius: 50%;
+}
 .grid{
     text-align:center;
     border:1px solid #0c0c0c;
     border-radius: 50%;
     background:gray;
-    padding:0.2em;
-   
 }
+
+
 

@@ -1,19 +1,18 @@
 
 let input=document.getElementById("input");
+let arr=[];
+let waitforsec=true;
+let total=0;
+
 
 let grids=document.querySelectorAll(".grid");
 for(let i=0;i<grids.length;i++){
-        grids[i].addEventListener("click",screenize)
-      
-        
+        grids[i].addEventListener("click",operate)
     }
-function screenize(){
-let inputvalue=this.innerText;
-input.innerHTML=inputvalue;
-    
- 
+let functions=document.querySelectorAll(".func");
+for(let i=0;i<functions.length;i++){
+    functions[i].addEventListener("click",operate)
 }
-
 /////////////ADD  //////////////
 function add(a,b){
     return a+b;
@@ -33,8 +32,37 @@ function divide(a,b){
     
 }
 //////////MAİN OPERATİON   ///////////
-function operation(func,num1,num2){
- return  func(num1,num2)  ;
+
+
+function operate(operator,num1,num2){
+if(Number(this.innerText)){
+input.value+=this.innerText;
+}else if(!Number(this.innerText)){
+            if(waitforsec){
+                let num1=Number(input.value);
+                 arr.push(num1);
+                input.value="";
+                 waitforsec=true;
+            }else{
+                 let num2=Number(input.value);
+                 arr.push(num2);
+                 waitforsec=false;
+            }
+    if(this.innerText==="+"){
+        while(arr.length>=2){
+       total= add(arr[arr.length-2],arr[arr.length-1])
+       console.log(total)
+            
+        }
+    
+}        
+
 }
+
+
+console.log(total)
+
+}
+
 
 
