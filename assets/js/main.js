@@ -40,16 +40,15 @@ function divide(a,b){
 //=====MAİN OPERATİON=====//
 
 function operate(operator,num1,num2){
-if(Number(this.innerText)){
-    if(input.value== 0){
+    if(!this.classList.contains("func")){
+      if(input.value==0){
         
         input.value="";
         input.value+=Number(this.innerText);
     }else {
-        input.value+=Number(this.innerText);
-    }
-    
-}else if(!Number(this.innerText)&&!this.classList.contains("current-op")){
+        input.value+=(this.innerText);
+    }  
+}else if(!this.classList.contains("current-op")&&this.classList.contains("func")){
             if(!waitforsec){
                 let num1=Number(input.value);
                  arr.push(num1);
@@ -72,18 +71,18 @@ function equals(){
 
     if(opsarr[opsarr.length-1]=="+"){
         total=add(arr[arr.length-1],Number(input.value));
-        input.value=total;
+        input.value=(total).toFixed(3);
         
     }else if(opsarr[opsarr.length-1]=="-"){
             total=substract(arr[arr.length-1],Number(input.value));
-            input.value=total;
+            input.value=(total).toFixed(3);
         }else if(opsarr[opsarr.length-1]=="*"){
             total=multiply(arr[arr.length-1],Number(input.value));
-            input.value=total;
+            input.value=(total).toFixed(3);
         }else if(opsarr[opsarr.length-1]=="/"){
             if(!Number(input.value)==0){
                 total=divide(arr[arr.length-1],Number(input.value));
-                input.value=total;
+                input.value=(total).toFixed(3);
             }else{
                 window.alert("ERROR!")
             }
@@ -98,5 +97,3 @@ function equals(){
     
 
 }
-
-
