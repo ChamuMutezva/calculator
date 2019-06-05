@@ -33,8 +33,12 @@ function assemble() {
     if (this.innerText === "(") {
         bracketMode = true;
         input.value = this.innerText;
-    } else {
-        input.value += this.innerText;
+    } else {         
+        input.value = input.value + this.innerText;        
+        total = eval(input.value);
+        input.value = input.value + " = " + total.toFixed(3).toString();
+        console.log(total);
+        bracketMode = false;
     }
 }
 //=======ADD======//
