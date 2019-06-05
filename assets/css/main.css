@@ -37,7 +37,7 @@ input{
     border:1px solid #0c0c0c;
     
 }
-.grid{
+.grid, .bracket{
     text-align:center;
     border:1px solid #0c0c0c;
     
